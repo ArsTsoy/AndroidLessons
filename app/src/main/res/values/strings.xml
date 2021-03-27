@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ActivityLesson</string>
+    <string name="some_string">Some String</string>
+</resources>
