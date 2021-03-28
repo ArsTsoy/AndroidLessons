@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/startVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.45"/>
+
+    <View
+        app:layout_constraintStart_toStartOf="@id/startVertical"
+        android:id="@+id/view1"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:background="#FF0505"
+        app:layout_constraintBottom_toTopOf="@id/view2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        app:layout_constraintStart_toStartOf="@id/startVertical"
+        android:id="@+id/view2"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:background="#2FFF00"
+        app:layout_constraintBottom_toTopOf="@id/view3"
+        app:layout_constraintTop_toBottomOf="@id/view1" />
+
+    <View
+        app:layout_constraintEnd_toStartOf="@id/startVertical"
+        android:id="@+id/view3"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:background="#002FFF"
+        app:layout_constraintBottom_toTopOf="@id/view4"
+        app:layout_constraintTop_toBottomOf="@id/view2" />
+
+    <View
+        app:layout_constraintEnd_toStartOf="@id/startVertical"
+        android:id="@+id/view4"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:background="#FFCC00"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

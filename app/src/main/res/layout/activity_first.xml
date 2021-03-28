@@ -6,50 +6,39 @@
     android:layout_height="match_parent"
     tools:context=".FirstActivity">
 
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Your name"
+        app:layout_constraintBottom_toTopOf="@id/btnNextActivity"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
     <Button
         android:id="@+id/btnNextActivity"
-        android:layout_width="34dp"
-        android:layout_height="100dp"
-        android:layout_margin="@dimen/marginTop"
-        android:layout_gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnNextActivity2"
-        android:layout_width="56dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnNextActivity" />
-
-    <View
-        android:id="@+id/view1"
-        android:layout_width="200dp"
-        android:layout_height="36dp"
-        app:layout_constraintCircle="@id/btnNextActivity"
-        app:layout_constraintCircleAngle="45"
-        app:layout_constraintCircleRadius="250dp"
-        android:background="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/barrier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:barrierDirection="end"
-        app:constraint_referenced_ids="btnNextActivity, btnNextActivity2" />
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/marginTop"
+        android:text="Show toast"
+        app:layout_constraintBottom_toTopOf="@id/btnShowSnackbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etName" />
 
-    <View
-        android:id="@+id/divider"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="?android:attr/listDivider"
-        tools:layout_editor_absoluteX="77dp"
-        tools:layout_editor_absoluteY="319dp" />
+
+    <Button
+        android:id="@+id/btnShowSnackbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/marginTop"
+        android:text="Show snackbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnNextActivity" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
