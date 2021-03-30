@@ -21,11 +21,23 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="@dimen/marginTop"
+        android:text="Go to 2 activity"
+        app:layout_constraintBottom_toTopOf="@id/btnShowToast"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etName" />
+
+    <Button
+        android:id="@+id/btnShowToast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/marginTop"
         android:text="Show toast"
         app:layout_constraintBottom_toTopOf="@id/btnShowSnackbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etName" />
+        app:layout_constraintTop_toBottomOf="@id/btnNextActivity" />
 
 
     <Button
@@ -38,7 +50,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnNextActivity" />
+        app:layout_constraintTop_toBottomOf="@id/btnShowToast" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

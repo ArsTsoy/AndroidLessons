@@ -24,7 +24,7 @@ class SecondActivity: AppCompatActivity() {
         Log.i("myActivitySecond", "onCreate")
 
 
-        val editText: EditText = findViewById(R.id.btnNextActivity)
+        val editText: EditText = findViewById(R.id.btnShowToast)
         val btnSave: Button = findViewById(R.id.btnSave)
 
         btnSave.setOnClickListener {

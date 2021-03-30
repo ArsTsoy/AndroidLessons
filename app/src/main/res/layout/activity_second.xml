@@ -8,7 +8,7 @@
     tools:context=".SecondActivity">
 
     <EditText
-        android:id="@+id/btnNextActivity"
+        android:id="@+id/btnShowToast"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
