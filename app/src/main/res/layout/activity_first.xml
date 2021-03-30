@@ -6,21 +6,62 @@
     android:layout_height="match_parent"
     tools:context=".FirstActivity">
 
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switchAddTransactionType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Transaction type(REPLACE)"
+        app:layout_constraintBottom_toTopOf="@id/fragmentContainer"/>
+
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/btnFirstFragment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/switchAddTransactionType"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+
+    <Button
+        android:id="@+id/btnFirstFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="1 fragment"
+        app:layout_constraintBottom_toTopOf="@id/etName"
+        app:layout_constraintEnd_toStartOf="@id/btnSecondFragment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragmentContainer" />
+
+    <Button
+        android:id="@+id/btnSecondFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="2 fragment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnFirstFragment"
+        app:layout_constraintTop_toBottomOf="@id/fragmentContainer" />
+
+
     <EditText
         android:id="@+id/etName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Your name"
         app:layout_constraintBottom_toTopOf="@id/btnNextActivity"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintTop_toBottomOf="@id/btnFirstFragment" />
 
     <Button
         android:id="@+id/btnNextActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="@dimen/marginTop"
         android:text="Go to 2 activity"
         app:layout_constraintBottom_toTopOf="@id/btnShowToast"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,7 +73,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="@dimen/marginTop"
         android:text="Show toast"
         app:layout_constraintBottom_toTopOf="@id/btnShowSnackbar"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,7 +85,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="@dimen/marginTop"
         android:text="Show snackbar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

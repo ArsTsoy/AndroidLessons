@@ -8,13 +8,76 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentActivity
+import kz.example.activitylesson.databinding.ActivityFirstBinding
+import kz.example.activitylesson.fragments.FirstFragment
+import kz.example.activitylesson.fragments.SecondFragment
 
-class FirstActivity : AppCompatActivity() {
+class FirstActivity : FragmentActivity() {
+    private lateinit var binding: ActivityFirstBinding
+    private var isAddTransaction = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_first)
+        binding = ActivityFirstBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
+        binding.switchAddTransactionType.setOnCheckedChangeListener { _, isChecked ->
+            isAddTransaction = isChecked
+
+
+            val type = if(isAddTransaction) {
+                "ADD"
+            } else {
+                "REPLACE"
+            }
+            binding.switchAddTransactionType.text = "Transaction type($type used)"
+            Log.i("myActivityFirst", "---------------------------" +
+                    "\nchangeType to $type" +
+                    "\n---------------------------")
+//            if(isChecked) {
+//
+//            } else {
+//
+//            }
+        }
+
+        binding.btnFirstFragment.setOnClickListener {
+            val fragment = FirstFragment()
+            val ft = supportFragmentManager
+                .beginTransaction()
+            ft.addToBackStack(null)
+            if(isAddTransaction) {
+                ft.add(R.id.fragmentContainer, fragment, "firstFragment")
+            } else {
+                ft.replace(R.id.fragmentContainer, fragment, "firstFragment")
+            }
+            ft.commit()
+        }
+
+        binding.btnSecondFragment.setOnClickListener {
+            val fragment = SecondFragment()
+            val ft = supportFragmentManager
+                .beginTransaction()
+            ft.addToBackStack(null)
+            if(isAddTransaction) {
+                ft.add(R.id.fragmentContainer, fragment, "secondFragment")
+            } else {
+                ft.replace(R.id.fragmentContainer, fragment, "secondFragment")
+            }
+            ft.commit()
+        }
+
+        binding.btnNextActivity.setOnClickListener {
+            goToSecondActivity()
+        }
+
+//        setupBtn()
+
+    }
+
+    private fun setupBtn() {
         Log.i("myActivityFirst", "onCreate")
         val btnNextActivity = findViewById<Button>(R.id.btnNextActivity)
         val btnShowSnackbar = findViewById<Button>(R.id.btnShowSnackbar)
@@ -22,13 +85,14 @@ class FirstActivity : AppCompatActivity() {
 
         btnNextActivity.setOnClickListener (object : View.OnClickListener {
             override fun onClick(v: View?) {
-                val intent = Intent(this@FirstActivity.applicationContext, SecondActivity::class.java)
-                startActivity(intent)
+                goToSecondActivity()
 //                Toast.makeText(this@FirstActivity, "Some text", Toast.LENGTH_LONG)
 //                    .show()
             }
 
         })
+
+
 
 //        button.setOnClickListener {
 //            Toast.makeText(this@FirstActivity, "You write: ${editText.text}", Toast.LENGTH_LONG)
@@ -47,6 +111,11 @@ class FirstActivity : AppCompatActivity() {
 //            snackbar.show()
 //
 //        }
+    }
+
+    private fun goToSecondActivity() {
+        val intent = Intent(this@FirstActivity.applicationContext, SecondActivity::class.java)
+        startActivity(intent)
     }
 
 
