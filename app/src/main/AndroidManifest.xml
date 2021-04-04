@@ -20,6 +20,7 @@
         </activity>
         <activity android:name=".SecondActivity" />
         <activity android:name=".FourActivity"/>
+        <activity android:name=".recycler_view.RecyclerViewActivity"/>
     </application>
 
 </manifest>

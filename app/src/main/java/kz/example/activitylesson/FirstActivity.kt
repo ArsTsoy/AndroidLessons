@@ -9,6 +9,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
+import kz.example.activitylesson.recycler_view.RecyclerViewActivity
 
 class FirstActivity : AppCompatActivity() {
 
@@ -31,8 +32,10 @@ class FirstActivity : AppCompatActivity() {
 //        })
 
         button.setOnClickListener {
-            Toast.makeText(this@FirstActivity, "You write: ${editText.text}", Toast.LENGTH_LONG)
-                .show()
+//            Toast.makeText(this@FirstActivity, "You write: ${editText.text}", Toast.LENGTH_LONG)
+//                .show()
+            val intent = Intent(this, RecyclerViewActivity::class.java)
+            startActivity(intent)
         }
 
         btnShowSnackbar.setOnClickListener {
