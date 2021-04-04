@@ -9,6 +9,7 @@
 
     <ImageView
         android:id="@+id/ivCity"
+        android:scaleType="centerCrop"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:src="@drawable/ic_baseline_brightness_auto_24"/>

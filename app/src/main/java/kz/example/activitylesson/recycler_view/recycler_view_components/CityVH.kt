@@ -4,6 +4,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import kz.example.activitylesson.R
 import kz.example.activitylesson.recycler_view.models.City
 
@@ -22,6 +23,10 @@ class CityVH(
         val ivCity: ImageView = view.findViewById(R.id.ivCity)
 
         tvCity.text = city.name
+
+        Glide.with(view)
+            .load(city.imageUrl)
+            .into(ivCity)
 
 //        view.setOnClickListener {
 //            itemClickListener.onClick(city)
