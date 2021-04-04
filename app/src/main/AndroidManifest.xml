@@ -19,7 +19,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".SecondActivity" />
-        <activity android:name=".FourActivity"/>
+        <activity android:name=".FourActivity">
+            <intent-filter>
+
+                <action android:name="myName"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

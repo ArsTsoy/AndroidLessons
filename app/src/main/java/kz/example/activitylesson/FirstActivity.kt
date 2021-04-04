@@ -3,6 +3,7 @@ package kz.example.activitylesson
 import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
@@ -23,9 +24,10 @@ class FirstActivity : FragmentActivity() {
         val view = binding.root
         setContentView(view)
 
+//        val intent = Intent(Intent.ACTION_DIAL)
+
         binding.switchAddTransactionType.setOnCheckedChangeListener { _, isChecked ->
             isAddTransaction = isChecked
-
 
             val type = if(isAddTransaction) {
                 "ADD"
@@ -76,6 +78,8 @@ class FirstActivity : FragmentActivity() {
 //        setupBtn()
 
     }
+
+
 
     private fun setupBtn() {
         Log.i("myActivityFirst", "onCreate")
@@ -152,5 +156,24 @@ class FirstActivity : FragmentActivity() {
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
         Log.i("myActivityFirst", "onConfigurationChanged")
+    }
+
+    override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
+        super.onSaveInstanceState(outState, outPersistentState)
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+    }
+
+    override fun onRestoreInstanceState(
+        savedInstanceState: Bundle?,
+        persistentState: PersistableBundle?
+    ) {
+        super.onRestoreInstanceState(savedInstanceState, persistentState)
     }
 }

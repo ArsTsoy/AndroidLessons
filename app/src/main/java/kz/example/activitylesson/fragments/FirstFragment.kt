@@ -78,5 +78,4 @@ class FirstFragment : Fragment() {
         super.onDetach()
     }
 
-
 }
