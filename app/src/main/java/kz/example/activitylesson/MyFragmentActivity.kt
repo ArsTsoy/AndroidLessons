@@ -20,7 +20,6 @@ class MyFragmentActivity : AppCompatActivity() {
     }
     //endregion
 
-
     //region Support
     private fun setupButtons() {
         val btnFirstFragment = findViewById<Button>(R.id.btnFirstFragment)
@@ -30,12 +29,12 @@ class MyFragmentActivity : AppCompatActivity() {
         btnSecondFragment.setOnClickListener { showSecondFragment() }
     }
 
-
     private fun showFirstFragment() {
         val fragment = FirstFragment()
         supportFragmentManager
             .beginTransaction()
-            .add(fragment, "firstFragment")
+            .addToBackStack(null)
+            .replace(R.id.flFragmentContainer, fragment, "firstFragment")
             .commit()
     }
 
@@ -43,7 +42,8 @@ class MyFragmentActivity : AppCompatActivity() {
         val fragment = SecondFragment()
         supportFragmentManager
             .beginTransaction()
-            .add(fragment, "secondFragment")
+            .addToBackStack(null)
+            .replace(R.id.flFragmentContainer, fragment, "secondFragment")
             .commit()
     }
     //endregion
