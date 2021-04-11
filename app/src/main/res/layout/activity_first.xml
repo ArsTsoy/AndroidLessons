@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="@dimen/marginTop"
-        android:text="Show toast"
+        android:text="Go to Activity"
         app:layout_constraintBottom_toTopOf="@id/btnShowSnackbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

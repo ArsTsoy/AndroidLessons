@@ -24,6 +24,7 @@
         <activity android:name=".FourActivity"/>
         <activity android:name=".recycler_view.RecyclerViewActivity"/>
         <activity android:name=".CityDetailActivity"/>
+        <activity android:name=".MyFragmentActivity"/>
     </application>
 
 </manifest>

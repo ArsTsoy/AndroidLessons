@@ -3,13 +3,10 @@ package kz.example.activitylesson
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
-import kz.example.activitylesson.recycler_view.RecyclerViewActivity
 
 class FirstActivity : AppCompatActivity() {
 
@@ -20,22 +17,8 @@ class FirstActivity : AppCompatActivity() {
         val button = findViewById<Button>(R.id.btnNextActivity)
         val btnShowSnackbar = findViewById<Button>(R.id.btnShowSnackbar)
         val editText = findViewById<EditText>(R.id.etName)
-
-//        button.setOnClickListener (object : View.OnClickListener {
-//            override fun onClick(v: View?) {
-////                val intent = Intent(this@FirstActivity.applicationContext, FourActivity::class.java)
-////                startActivity(intent)
-//                Toast.makeText(this@FirstActivity, "Some text", Toast.LENGTH_LONG)
-//                    .show()
-//            }
-//
-//        })
-
         button.setOnClickListener {
-//            Toast.makeText(this@FirstActivity, "You write: ${editText.text}", Toast.LENGTH_LONG)
-//                .show()
-            val intent = Intent(this, RecyclerViewActivity::class.java)
-            startActivity(intent)
+            goToActivity(MyFragmentActivity::class.java)
         }
 
         btnShowSnackbar.setOnClickListener {
@@ -44,15 +27,15 @@ class FirstActivity : AppCompatActivity() {
                 "You write: ${editText.text}",
                 Snackbar.LENGTH_INDEFINITE
             )
-            snackbar.setAction("Понял", {
+            snackbar.setAction("Понял") {
                 snackbar.dismiss()
-            })
+            }
             snackbar.show()
 
         }
     }
 
-
+    //region Lifecycle
     override fun onStart() {
         super.onStart()
         Log.i("myActivityFirst", "onStart")
@@ -82,4 +65,12 @@ class FirstActivity : AppCompatActivity() {
         super.onDestroy()
         Log.i("myActivityFirst", "onDestroy")
     }
+    //endregion
+
+    //region Support
+    private fun goToActivity(cls: Class<*>) {
+        val intent = Intent(this, cls)
+        startActivity(intent)
+    }
+    //endregion
 }
