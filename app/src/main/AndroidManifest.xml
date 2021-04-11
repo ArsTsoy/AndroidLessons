@@ -13,12 +13,12 @@
         android:theme="@style/Theme.ActivityLesson">
         <activity android:name=".ThirdActivity"/>
         <activity android:name=".FirstActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.intent.action.VIEW" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <action android:name="android.intent.action.VIEW" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
         <activity android:name=".SecondActivity" />
         <activity android:name=".FourActivity">
@@ -30,6 +30,14 @@
         </activity>
         <activity android:name=".recycler_view.RecyclerViewActivity"/>
         <activity android:name=".CityDetailActivity"/>
+        <activity android:name=".custom_view.CustomViewActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
