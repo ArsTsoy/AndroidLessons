@@ -25,6 +25,7 @@
         <activity android:name=".recycler_view.RecyclerViewActivity"/>
         <activity android:name=".CityDetailActivity"/>
         <activity android:name=".MyFragmentActivity"/>
+        <activity android:name=".recycler_view.in_fragments.SampleSingleActivity"/>
     </application>
 
 </manifest>

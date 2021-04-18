@@ -12,7 +12,7 @@ import kz.example.activitylesson.recycler_view.models.City
 
 class CityRVAdapter(
     val items: List<City>,
-    private val itemClickListener: ItemClickListener<City>,
+    private val itemClickListener: ItemClickListener<City>?,
     private val clickListener: (City) -> Unit
 ) : RecyclerView.Adapter<CityVH>() {
 

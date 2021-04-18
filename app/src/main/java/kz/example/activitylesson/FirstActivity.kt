@@ -7,6 +7,8 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
+import kz.example.activitylesson.recycler_view.RecyclerViewActivity
+import kz.example.activitylesson.recycler_view.in_fragments.SampleSingleActivity
 
 class FirstActivity : AppCompatActivity() {
 
@@ -22,15 +24,16 @@ class FirstActivity : AppCompatActivity() {
         }
 
         btnShowSnackbar.setOnClickListener {
-            val snackbar = Snackbar.make(
-                btnShowSnackbar,
-                "You write: ${editText.text}",
-                Snackbar.LENGTH_INDEFINITE
-            )
-            snackbar.setAction("Понял") {
-                snackbar.dismiss()
-            }
-            snackbar.show()
+//            val snackbar = Snackbar.make(
+//                btnShowSnackbar,
+//                "You write: ${editText.text}",
+//                Snackbar.LENGTH_INDEFINITE
+//            )
+//            snackbar.setAction("Понял") {
+//                snackbar.dismiss()
+//            }
+//            snackbar.show()
+            goToActivity(SampleSingleActivity::class.java)
 
         }
     }
